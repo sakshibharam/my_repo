@@ -20,7 +20,7 @@ def main():
     # can object
 
     # create objects
-    #kill_button_listener = Kill_Button_Interface(running = shared_memory_object.running)
+    kill_button_listener = Kill_Button_Interface(running = shared_memory_object.running)
     move_forward_obj = Move_Forward(shared_memory_object)
     ascend_descend_obj = Ascend_Descend(shared_memory_object) 
  
@@ -28,7 +28,7 @@ def main():
     #ADD OBJECTS HERE   
 
     #create processes
-    #kill_button_listener_process = Process(target=kill_button_listener.run_loop)
+    kill_button_listener_process = Process(target=kill_button_listener.run_loop)
   
     move_forward_process = Process(target=move_forward_obj.run_loop)
     ascend_descend_process = Process(target=ascend_descend_obj.run_loop)
@@ -36,14 +36,14 @@ def main():
     #ADD PROCESSES HERE
     
     # start processes
-    #kill_button_listener_process.start()
+    kill_button_listener_process.start()
     move_forward_process.start()
     ascend_descend_process.start()
 
     #ADD START PROCESSES HERE
 
     # wait for processes to finish
-    #kill_button_listener_process.join()
+    kill_button_listener_process.join()
     move_forward_process.join()
     ascend_descend_process.join()
 
